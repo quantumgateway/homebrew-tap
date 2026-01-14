@@ -2,7 +2,7 @@ class Dbmigrate < Formula
   desc "Database migration tool for ClickHouse"
   homepage "https://github.com/quantumgateway/dbmigrate"
   url "https://github.com/quantumgateway/dbmigrate/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed"
+  sha256 "e6af719e221407d8b2e6e4a0613904e2e82a428a97619c5ff9d16e05e25d63e2"
   license "MIT"
 
   depends_on "go" => :build
