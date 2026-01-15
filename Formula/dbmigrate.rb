@@ -1,17 +1,17 @@
 class Dbmigrate < Formula
   desc "Database migration tool for ClickHouse"
   homepage "https://github.com/quantumgateway/dbmigrate"
-  url "https://github.com/quantumgateway/dbmigrate/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "e6af719e221407d8b2e6e4a0613904e2e82a428a97619c5ff9d16e05e25d63e2"
+  url "https://github.com/quantumgateway/dbmigrate/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "9a3653bd9163d1340945b9b0d9c64a9dab8e3bd19d58255466daa1c28032d1a6"
   license "MIT"
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=v1.0.1")
   end
 
   test do
-    assert_match "Usage:", shell_output("#{bin}/dbmigrate --help", 1)
+    assert_match "dbmigrate", shell_output("#{bin}/dbmigrate --help 2>&1")
   end
 end
